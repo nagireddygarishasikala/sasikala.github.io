@@ -1,0 +1,24 @@
+.google-login-btn {
+  background-image: url('src/assets/google-logo.png');
+  background-repeat: no-repeat;
+  background-size: 9%;
+  background-position: 10%;
+  padding-left: 10%;
+  width: 72%;
+}
+.facebook-login-btn{
+  background-image: url('src/assets/facebook-logo.jpg');
+  background-repeat: no-repeat;
+  background-size: 9%;
+  background-position: 10%;
+  padding-left: 10%;
+  width: 72%;
+}
+
+@media (min-width: 1200px){
+.container {
+    max-width: 500px;
+    margin-top:5%;
+}
+
+}

@@ -1,0 +1,45 @@
+
+
+mat-card {
+  margin: 10% auto;
+  width: 50%;
+}
+
+mat-form-field {
+  width: 100%;
+}
+@media (min-width: 1200px){
+.container {
+    max-width: 500px;
+    margin-top:5%;
+   
+}
+}
+
+
+.errMessages {
+  color: #e31d1a;
+  font-size: 12px;
+  width: 84%;
+}
+h1{
+  font-size: 38px;
+  font-family: 'Arial';
+  font-weight: bold;
+}
+label{
+  font-size: 16px;
+  font-family: 'Arial';
+}
+input,
+textarea
+{
+  font-size: 16px;
+  font-family: 'Arial';
+  height: 36px;
+}
+button{
+  font-size: 16px;
+  font-family: 'Arial';
+  height: 36px;
+}

@@ -1,0 +1,71 @@
+<div style="float: right;margin-right: 15%;display: flex;width:20%;"> 
+  <button (click)="goToContactPage()" class="btn btn-primary" style="width: 100%;color: black;background-color: rgb(230, 230, 230);;border-radius: 25px;margin-right: 2%;">
+  Contact Us</button> <button (click)="goToAnalyticsPage()" class="btn btn-primary" style="width: 100%;color: black;background-color: #ffff;border-radius: 25px;">
+      Analytics</button>
+      <img src="../../assets/images/logout.png" style="margin-left: 10%;float: left;width: 10%;height: 5%;" (click)="logOut()"/>
+  </div>
+
+
+<div class="container">
+  <h1>Contact US Form</h1>
+  <form [formGroup]="_contactForm">
+  <div class="form-group">
+  
+  <label for="username">FirstName</label>
+  <input type="text" class="form-control" [(ngModel)]="_contact.FirstName"  formControlName="firstName" />
+  <div class="errMessages" *ngIf="_isContactFormInValid">
+    <div
+      *ngIf="_contactForm.controls.firstName.hasError('required') && !_contactForm.controls.firstName.valid">
+      First Name is required.
+    </div>
+    
+  </div>
+  
+</div>
+<div class="form-group">
+  <label for="username">LastName</label>
+  <input type="text" formControlName="lastName" class="form-control" [(ngModel)]="_contact.LastName"/>
+  <div class="errMessages" *ngIf="_isContactFormInValid">
+    <div
+      *ngIf="_contactForm.controls.lastName.hasError('required') && !_contactForm.controls.lastName.valid">
+      Last Name is required.
+    </div>
+    
+  </div>
+</div>
+<div class="form-group">
+  <label for="username">Email</label>
+  <input type="email" formControlName="email" class="form-control" [(ngModel)]="_contact.Email"/>
+  <div class="errMessages" *ngIf="_isContactFormInValid">
+    <div
+      *ngIf="_contactForm.controls.email.hasError('required') && !_contactForm.controls.email.valid">
+      Email is required.
+    </div>
+    <div *ngIf="_contactForm.controls.email.hasError('maxlength') && !_contactForm.controls.email.valid">
+      Email cannot exceed 256 characters.
+    </div>
+    <div *ngIf="_contactForm.controls.email.hasError('pattern') && !_contactForm.controls.email.valid">
+      Email is not in correct format.
+    </div>
+    
+  </div>
+</div>
+<div class="form-group">
+  <label for="username">Message</label>
+  <textarea formControlName="message" class="form-control" [(ngModel)]="_contact.Message"></textarea>
+  <div class="errMessages" *ngIf="_isContactFormInValid">
+    <div
+      *ngIf="_contactForm.controls.message.hasError('required') && !_contactForm.controls.message.valid">
+      Message is required.
+    </div>
+    
+  </div>
+</div>
+<div class="form-group">
+  <button (click)="SubmittContacts()" class="btn btn-primary" style="width: 100%;">
+    Submit</button>
+  <!-- <a routerLink="/register" class="btn btn-link">Register</a> -->
+</div>
+</form>
+
+</div>
